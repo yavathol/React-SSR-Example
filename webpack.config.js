@@ -2,7 +2,7 @@ var path = require('path');
 var webpack = require('webpack');
 var nodeExternals = require('webpack-node-externals');
 
-var browserConfig = {
+var clientConfig = {
   entry: './src/client/index.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -60,4 +60,4 @@ var serverConfig = {
   ]
 }
 
-module.exports = [browserConfig, serverConfig]
+module.exports = [clientConfig, serverConfig]
