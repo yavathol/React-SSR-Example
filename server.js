@@ -113,7 +113,7 @@ app.use(_express2.default.static('dist'));
 app.get('*', function (req, res, next) {
     var markup = (0, _server.renderToString)(_react2.default.createElement(_App2.default, null));
 
-    res.send((0, _lib.Html)(constants.APP_TITLE, markup));
+    res.send((0, _lib.Html)(constants.APP_TITLE, constants.BUNDLE_PATH, markup));
 });
 
 app.listen(3000, function () {
@@ -222,8 +222,8 @@ exports.Html = _html2.default;
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-var Html = function Html(title, body) {
-    return "\n    <!DOCTYPE html>\n    <html>\n        <head>\n            <title>" + title + "</title>\n        </head>\n\n        <body>\n            <div class=\"container\">" + body + "</div>\n        </body>\n    </html>\n";
+var Html = function Html(title, bundle, body) {
+    return "\n    <!DOCTYPE html>\n    <html>\n        <head>\n            <title>" + title + "</title>\n            <script src=\"" + bundle + "\" defer></script>\n        </head>\n\n        <body>\n            <div id=\"app\">" + body + "</div>\n        </body>\n    </html>\n";
 };
 
 exports.default = Html;
@@ -240,6 +240,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 var PORT = exports.PORT = process.env.PORT || 3000;
 var APP_TITLE = exports.APP_TITLE = "React SSR & Router v4 Example";
+var BUNDLE_PATH = exports.BUNDLE_PATH = "./bundle.js";
 
 /***/ })
 /******/ ]);

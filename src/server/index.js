@@ -16,7 +16,7 @@ app.use(express.static('dist'));
 app.get('*', (req, res, next) => {
     const markup = renderToString(<App />);
 
-    res.send(Html(constants.APP_TITLE, markup));
+    res.send(Html(constants.APP_TITLE, constants.BUNDLE_PATH, markup));
 })
 
 app.listen(3000, () => {

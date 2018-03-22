@@ -1,12 +1,13 @@
-const Html = (title, body) => `
+const Html = (title, bundle, body) => `
     <!DOCTYPE html>
     <html>
         <head>
             <title>${title}</title>
+            <script src="${bundle}" defer></script>
         </head>
 
         <body>
-            <div class="container">${body}</div>
+            <div id="app">${body}</div>
         </body>
     </html>
 `;
