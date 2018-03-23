@@ -1,9 +1,10 @@
 import express from 'express';
 import cors from 'cors';
 import { renderToString } from 'react-dom/server';
-import App from '@common/App';
 import React from 'react';
+import "isomorphic-fetch";
 
+import App from '@common/App';
 import { Html } from '@lib';
 import * as constants from '@constants';
 
@@ -14,9 +15,14 @@ app.use(cors());
 app.use(express.static('dist'));
 
 app.get('*', (req, res, next) => {
-    const markup = renderToString(<App />);
+    const { APP_TITLE, BUNDLE_PATH, DEFAULT_LOCATION } = constants;
 
-    res.send(Html(constants.APP_TITLE, constants.BUNDLE_PATH, markup));
+    fetch(`https://jobs.github.com/positions.json?description=javascript&location=${DEFAULT_LOCATION}`)
+        .then(response => response.json())
+        .then(jsonData => {
+            const markup = renderToString(<App data={jsonData}/>);
+            res.send(Html(APP_TITLE, BUNDLE_PATH, jsonData, markup));
+        });
 })
 
 app.listen(3000, () => {
