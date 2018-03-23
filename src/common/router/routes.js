@@ -29,6 +29,9 @@
         Medium:
             https://medium.com/@phoebe.greig/headache-free-isomorphic-app-tutorial-react-js-react-router-node-js-ssr-with-state-and-es6-797a8d8e493a
             https://crypt.codemancers.com/posts/2017-06-03-reactjs-server-side-rendering-with-router-v4-and-redux/
+        
+        React Training:
+            https://reacttraining.com/react-router/web/guides/server-rendering
 
         YouTube:
             https://www.youtube.com/watch?v=duhudXkHRf4
