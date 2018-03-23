@@ -223,7 +223,7 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 var Html = function Html(title, body) {
-    return "\n    <!DOCTYPE html>\n    <html>\n        <head>\n            <title>" + title + "</title>\n        </head>\n\n        <body>\n            <div class=\"container\">" + body + "</div>\n        </body>\n    </html>\n";
+    return "\n    <!DOCTYPE html>\n    <html>\n        <head>\n            <title>" + title + "</title>\n        </head>\n\n        <body>\n            <div id=\"app\">" + body + "</div>\n        </body>\n    </html>\n";
 };
 
 exports.default = Html;

@@ -6,7 +6,7 @@ const Html = (title, body) => `
         </head>
 
         <body>
-            <div class="container">${body}</div>
+            <div id="app">${body}</div>
         </body>
     </html>
 `;
