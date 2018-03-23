@@ -339,37 +339,41 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var SearchResults = function SearchResults(props) {
     return props.queryData.map(function (each) {
         return _react2.default.createElement(
-            _components.Container,
-            null,
+            'div',
+            { key: each.id, className: 'parent-container' },
             _react2.default.createElement(
-                'div',
-                { key: each.id, className: 'search-result' },
-                _react2.default.createElement(
-                    _components.Header,
-                    null,
-                    _react2.default.createElement(
-                        'h2',
-                        { className: 'title' },
-                        each.title
-                    )
-                ),
-                _react2.default.createElement('hr', null),
-                _react2.default.createElement(
-                    'p',
-                    { className: 'date' },
-                    each.created_at
-                ),
-                _react2.default.createElement(
-                    'p',
-                    { className: 'type' },
-                    'Type: ',
-                    each.type
-                ),
+                _components.Container,
+                null,
                 _react2.default.createElement(
                     'div',
-                    { className: 'description' },
-                    'Job description: ',
-                    (0, _reactHtmlParser2.default)(each.description)
+                    { className: 'search-result' },
+                    _react2.default.createElement(
+                        _components.Header,
+                        null,
+                        _react2.default.createElement(
+                            'h2',
+                            { className: 'title' },
+                            each.title
+                        )
+                    ),
+                    _react2.default.createElement('hr', null),
+                    _react2.default.createElement(
+                        'p',
+                        { className: 'date' },
+                        each.created_at
+                    ),
+                    _react2.default.createElement(
+                        'p',
+                        { className: 'type' },
+                        'Type: ',
+                        each.type
+                    ),
+                    _react2.default.createElement(
+                        'div',
+                        { className: 'description' },
+                        'Job description: ',
+                        (0, _reactHtmlParser2.default)(each.description)
+                    )
                 )
             )
         );
