@@ -20,6 +20,7 @@ var clientConfig = {
         '@common': path.resolve(__dirname, './src/common'),
         '@server': path.resolve(__dirname, './src/server'),
         '@constants': path.resolve(__dirname, './src/common/constants'),
+        '@components': path.resolve(__dirname, './src/common/components'),
         '@lib': path.resolve(__dirname, './src/client/lib')
       }
   },
@@ -50,6 +51,7 @@ var serverConfig = {
         '@common': path.resolve(__dirname, './src/common'),
         '@server': path.resolve(__dirname, './src/server'),
         '@constants': path.resolve(__dirname, './src/common/constants'),
+        '@components': path.resolve(__dirname, './src/common/components'),
         '@lib': path.resolve(__dirname, './src/client/lib')
       }
   },
