@@ -86,7 +86,7 @@ var _cors2 = _interopRequireDefault(_cors);
 
 var _server = __webpack_require__(4);
 
-var _App = __webpack_require__(6);
+var _App = __webpack_require__(5);
 
 var _App2 = _interopRequireDefault(_App);
 
@@ -94,9 +94,9 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _lib = __webpack_require__(9);
+var _lib = __webpack_require__(6);
 
-var _constants = __webpack_require__(12);
+var _constants = __webpack_require__(8);
 
 var constants = _interopRequireWildcard(_constants);
 
@@ -139,8 +139,7 @@ module.exports = require("cors");
 module.exports = require("react-dom/server");
 
 /***/ }),
-/* 5 */,
-/* 6 */
+/* 5 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -194,9 +193,7 @@ var App = function (_Component) {
 exports.default = App;
 
 /***/ }),
-/* 7 */,
-/* 8 */,
-/* 9 */
+/* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -207,7 +204,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.Html = undefined;
 
-var _html = __webpack_require__(10);
+var _html = __webpack_require__(7);
 
 var _html2 = _interopRequireDefault(_html);
 
@@ -216,7 +213,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 exports.Html = _html2.default;
 
 /***/ }),
-/* 10 */
+/* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -232,8 +229,7 @@ var Html = function Html(title, body) {
 exports.default = Html;
 
 /***/ }),
-/* 11 */,
-/* 12 */
+/* 8 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
