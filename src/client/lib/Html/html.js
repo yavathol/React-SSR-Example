@@ -1,8 +1,9 @@
-const Html = (title, body) => `
+const Html = (title, body, bundle) => `
     <!DOCTYPE html>
     <html>
         <head>
             <title>${title}</title>
+            <script src="${bundle}" defer></script>
         </head>
 
         <body>

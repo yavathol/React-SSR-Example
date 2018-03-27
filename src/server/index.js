@@ -14,9 +14,9 @@ app.use(cors());
 app.use(express.static('dist'));
 
 app.get('*', (req, res, next) => {
-    const markup = renderToString(<App />);
+    const markup = renderToString(<App name="Jan" />);
 
-    res.send(Html(constants.APP_TITLE, markup));
+    res.send(Html(constants.APP_TITLE, markup, './bundle.js'));
 })
 
 app.listen(3000, () => {

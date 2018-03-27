@@ -6,6 +6,7 @@ class App extends Component {
             <div className="App">
                 <p className="title">
                     React SSR and Router v4 example.
+                    { this.props.name }
                 </p>
             </div>
         )

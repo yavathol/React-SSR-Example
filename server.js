@@ -111,9 +111,9 @@ app.use((0, _cors2.default)());
 app.use(_express2.default.static('dist'));
 
 app.get('*', function (req, res, next) {
-    var markup = (0, _server.renderToString)(_react2.default.createElement(_App2.default, null));
+    var markup = (0, _server.renderToString)(_react2.default.createElement(_App2.default, { name: 'Jan' }));
 
-    res.send((0, _lib.Html)(constants.APP_TITLE, markup));
+    res.send((0, _lib.Html)(constants.APP_TITLE, markup, './bundle.js'));
 });
 
 app.listen(3000, function () {
@@ -181,7 +181,8 @@ var App = function (_Component) {
                 _react2.default.createElement(
                     "p",
                     { className: "title" },
-                    "React SSR and Router v4 example."
+                    "React SSR and Router v4 example.",
+                    this.props.name
                 )
             );
         }
@@ -222,8 +223,8 @@ exports.Html = _html2.default;
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-var Html = function Html(title, body) {
-    return "\n    <!DOCTYPE html>\n    <html>\n        <head>\n            <title>" + title + "</title>\n        </head>\n\n        <body>\n            <div id=\"app\">" + body + "</div>\n        </body>\n    </html>\n";
+var Html = function Html(title, body, bundle) {
+    return "\n    <!DOCTYPE html>\n    <html>\n        <head>\n            <title>" + title + "</title>\n            <script src=\"" + bundle + "\" defer></script>\n        </head>\n\n        <body>\n            <div id=\"app\">" + body + "</div>\n        </body>\n    </html>\n";
 };
 
 exports.default = Html;
