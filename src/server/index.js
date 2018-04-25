@@ -1,12 +1,13 @@
 import express from 'express';
 import cors from 'cors';
-import { renderToString } from 'react-dom/server';
+import {renderToString} from 'react-dom/server';
 import React from 'react';
-import { ServerStyleSheet } from 'styled-components';
+import {ServerStyleSheet} from 'styled-components';
 import "isomorphic-fetch";
 
 import App from '@common/App';
-import { Html } from '@lib';
+import {StaticRouter} from 'react-router-dom'
+import {Html} from '@lib';
 import * as constants from '@constants';
 
 const app = express();
@@ -22,7 +23,7 @@ app.get('*', (req, res, next) => {
     fetch(`https://jobs.github.com/positions.json?description=javascript&location=${DEFAULT_LOCATION}`)
         .then(response => response.json())
         .then(jsonData => {
-            const markup = renderToString(sheet.collectStyles(<App data={jsonData}/>));
+            const markup = renderToString(sheet.collectStyles(<StaticRouter context={{}}/* location={req.url}*/><App data={jsonData}/></StaticRouter>));
             const styles = sheet.getStyleTags();
             res.send(Html(APP_TITLE, BUNDLE_PATH, jsonData, styles, markup));
         });

@@ -22,7 +22,7 @@
         with proper content
 
         b. Similarly, when hitting the http://localhost:3000/about, we should get
-        "About" component rednered with the static content.
+        "About" component rendered with the static content.
 
     USEFUL LINKS:
 
